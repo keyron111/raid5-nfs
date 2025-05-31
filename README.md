@@ -6,7 +6,7 @@ mdadm --detail --scan | awk '/ARRAY/ {print}' >> /etc/mdadm.conf
 mkfs.ext4 /dev/md0
 nano /etc/fstab
 mkdir /raid5
-/dev/md0 /raid5 defaults 0 0
+/dev/md0 /raid5 ext4 defaults 0 0
 mount -a
 dnf install nfs-utils -y
 mkdir /raid5/nfs
